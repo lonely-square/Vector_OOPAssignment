@@ -1,0 +1,2 @@
+# Vector_OOPAssignment
+SHU面向对象程序设计课程小组项目
