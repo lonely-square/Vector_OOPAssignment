@@ -1,6 +1,7 @@
 // MyString.cpp
 #include "MyString.h"
 #include <cstring>
+using namespace std;
 
 String::String(const char *str) : VECTOR<char>(strlen(str), str)	// ¹¹Ôìº¯Êý
 {

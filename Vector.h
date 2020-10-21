@@ -20,6 +20,8 @@ public:
 	Vector<T> & operator+=(const Vector<T> &v) throw(double);
 	Vector<T> & operator-=(const Vector<T> &v) throw(double);
 	Vector<T> & operator*=(const T &x);
+	template <typename T> friend bool operator==(const Vector<T>& v1, const Vector<T>& v2);
+	template <typename T> friend bool operator!=(const Vector<T>& v1, const Vector<T>& v2);
 };
 
 template <typename T>
@@ -130,6 +132,25 @@ template <typename T>
 Vector<T> & Vector<T>::operator*=(const T &x)
 {
 	return *this = x * (*this);
+}
+
+//Done
+template <typename T>
+bool operator==(const Vector<T>& v1, const Vector<T>& v2)
+{
+	int i, n1 = v1.getsize(), n2 = v2.getsize();
+	for (i = 0; i < n1 && i < n2 && v1[i] == v2[i]; i++)
+		;
+	if (i < n1 || i < n2)
+		return false;
+	else
+		return true;
+}
+
+template <typename T>
+bool operator!=(const Vector<T>& v1, const Vector<T>& v2)
+{
+	return !(v1 == v2);
 }
 
 #endif

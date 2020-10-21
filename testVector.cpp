@@ -46,9 +46,56 @@ int testVector()
 	infile >> vi1 >> vi2 >> vd1 >> vd2;
 	infile.close();
 	cout << "vi1 = " << vi1 << "\nvi2 = " << vi2
-		 << "\nvd1 = " << vd1 << "\nvd2 = " << vd2 << endl;
+		 << "\nvd1 = " << vd1 << "\nvd2 = " << vd2 << endl;	
+
+
+	cout << "\n测试重载运算符==、!=";
+
+	if (vi1 == vi2)
+		cout << "\nvi1 = vi2 ";
+	else 
+		cout << "\nvi1 != vi2 ";
+
+	if (vi1 != vi2)
+		cout << "\nvi1 != vi2 ";
+	else 
+		cout << "\nvi1 == vi2 ";
+
+
+	cout << endl <<"\n异常处理测试";
+
+
+	cout << "\n将vi1维数调整到4"<< endl;
+	vi1.resize(4);
+	cout << "vi1 = " << vi1 << "\nvi2 = " << vi2 << endl;
+
+	try {
+		cout << "vi1+vi2:";
+		cout << "\nvi1 + vi2 = " << vi1 + vi2;
+	}
+	catch (double)
+	{
+		cout << "维数不同时无法进行两个向量的和";
+	}
+	catch (int)
+	{
+		cout << "方括号运算时下标越界";
+	}
+
+	try {
+		cout << "\n取vi1下标为6时:";
+		cout << vi1[6] << endl;
+	}
+	catch (double)
+	{
+		cout << "维数不同时无法进行两个向量的和";
+	}
+	catch (int)
+	{
+		cout << "方括号运算时下标越界";
+	}
+
+		cout << "\nvd1 + vd2 = " << vd1 + vd2 << endl;
 	
-	cout << "\nvi1 + vi2 = " << vi1 + vi2
-		 << "\nvd1 + vd2 = " << vd1 + vd2 << endl;
 	return 0;
 }
