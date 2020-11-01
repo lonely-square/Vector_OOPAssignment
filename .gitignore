@@ -1,6 +1,5 @@
 /.*/
 /*.exe
-/*.win
 /Debug/
 /*.sln
 /*.vcxproj*
