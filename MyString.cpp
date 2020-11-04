@@ -53,7 +53,7 @@ void String::Input(istream &in)	// 具有自动扩展容器容量的功能
 	*this = temp;					// 利用了赋值运算符（深赋值运算）
 }
 
-istream & getline(istream &in, String &Str, int n, char delim)
+istream & getline(istream &in, String &Str, int n, char delim )
 {
 	if(n<=0) return in;
 	char *p = new char[n];
@@ -133,4 +133,25 @@ bool operator==(const String &s1, const String &s2)
 bool operator!=(const String &s1, const String &s2)
 {
 	return !(s1==s2);
+}
+
+void String::resize(int size)			// 指定向量的维数（尽量保留原有的数据）
+{
+	if (size < 0 || size == num)
+		return;
+	else if (size == 0)
+	{
+		if (p != NULL) delete[] p;
+		p = NULL;
+		num = 0;
+	}
+	else
+	{
+		char* temp = p;
+		p = new char[size];
+		for (int i = 0; i < size; i++)
+			p[i] = (i < num) ? temp[i] : 0;	// 尽量保留原有数据
+		num = size;
+		delete[] temp;
+	}
 }

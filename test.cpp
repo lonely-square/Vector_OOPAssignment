@@ -48,8 +48,8 @@ int test()
 	cout << v << endl;
 	cin.sync();			// 刷新输入流缓冲区（目的是读取并丢弃向量后的换行符）
 	cout << "请输入一个字符串。如 abc 12345   xyz" << endl;
-//	cin >> str;						// 并非读取整行
-	getline(cin, str, 80);			// 读取整行
+	cin >> str;						// 并非读取整行
+//	getline(cin, str, 80);			// 读取整行
 	cout << str << endl;
 
 	cout << "\n将数据写入文件 output.txt 中..." << endl;

@@ -12,6 +12,7 @@ public:
 	
 	void Output(ostream &out) const;
 	void Input(istream &in);
+	void resize(int size);
 	friend istream & getline(istream &in, String &Str, int n, char delim='\n');
 
 	friend String operator+(const String &s1, const String &s2);
