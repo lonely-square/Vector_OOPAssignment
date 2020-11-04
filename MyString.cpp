@@ -155,7 +155,6 @@ void String::resize(int size)			// 指定向量的维数（尽量保留原有的数据）
 		delete[] temp;
 	}
 }
-
 String String::mid(int pos, int n) const
 {
 	String t1;
