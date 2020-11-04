@@ -150,7 +150,7 @@ void String::resize(int size)			// 指定向量的维数（尽量保留原有的数据）
 		char* temp = p;
 		p = new char[size];
 		for (int i = 0; i < size; i++)
-			p[i] = (i < num) ? temp[i] : 0;	// 尽量保留原有数据
+			p[i] = (i < num) ? temp[i] : ' ';	// 尽量保留原有数据
 		num = size;
 		delete[] temp;
 	}
