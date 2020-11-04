@@ -12,6 +12,7 @@ int main()
 	int choice=1;
 	while(choice)
 	{
+		system("cls");
 		cout << "\n1 --- testing Vector          [v]"
 			 << "\n2 --- testing String          [s]"
 			 << "\n3 --- testing Vector & String [m]"
