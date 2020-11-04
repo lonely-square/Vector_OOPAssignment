@@ -163,7 +163,7 @@ void Vector<T>::resize(int size)			// 指定向量的维数（尽量保留原有的数据）
 	{
 		if (this->p != NULL) delete[] this->p;
 		this->p = NULL;
-		num = 0;
+		this->num = 0;
 	}
 	else
 	{
